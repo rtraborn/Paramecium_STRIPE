@@ -1,0 +1,93 @@
+#!/bin/bash
+
+#Setting variables:
+#
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source ${DIR}/PdSTRIPE.configfile 
+
+#No further edits necessary from here on ...
+#
+
+
+cd ${fastqDIR}
+
+#Trimming the reads with trimmomatic:
+#
+echo "time ${SCRIPTS}/run_trimmomatic.sh"
+time ${SCRIPTS}/run_trimmomatic.sh
+
+#Removing ribosomal RNA hits with tagdust:
+#
+
+rep1_R1=${SAMPLE}_rep1_trimmed_R1.fq
+rep1_R2=${SAMPLE}_rep1_trimmed_R2.fq
+rep2_R1=${SAMPLE}_rep2_trimmed_R1.fq
+rep2_R2=${SAMPLE}_rep2_trimmed_R2.fq
+rep3_R1=${SAMPLE}_rep3_trimmed_R1.fq
+rep3_R2=${SAMPLE}_rep3_trimmed_R2.fq
+
+OP1=${SAMPLE}_rep1_trno_tagdusted
+OP2=${SAMPLE}_rep2_trno_tagdusted
+OP3=${SAMPLE}_rep3_trno_tagdusted
+${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep1_R1} ${rep1_R2} -o ${OP1}
+${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep2_R1} ${rep2_R2} -o ${OP2}
+${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep3_R1} ${rep3_R2} -o ${OP3}
+
+cd ..
+
+
+#Mapping the reads with the BWA aligner:
+#
+echo "time ${SCRIPTS}/run_BWA_alignment.sh"
+time ${SCRIPTS}/run_BWA_alignment.sh
+
+
+#Scrubbing and removal of PCR duplicates:
+#
+BWAdir=${BASEDIR}/${EXPERIMENT}/BWAdir
+
+cd ${BWAdir}
+
+for BAM in *rep?_filtered.bam; do
+
+    echo "${SAMTOOLS} sort -n ${BAM} | samtools view -h > ${BAM}_filtered_sorted.sam"
+    ${SAMTOOLS} sort -n ${BAM} | samtools view -h > $(basename $BAM _filtered.bam)_filtered_sorted.sam
+
+# ... scrubbing: we remove singlets left over by the samtools -f 2 -q 10 filter that
+#      left one read of a read pair intact; we also remove read pairs in
+#      which one read was mapped with more than a 4kb gap (presumed intron)
+#      and reads with TLEN greater than 5000; potential introns >= 50 nt
+#      detecting read pairs are saved for further analysis (but not removed
+#      from the final set for TSRchitect analysis - Scrubbed-${BAM}.bam)
+#
+
+${SCRIPTS}/scrubSAMfile.pl -p -i 50 -I 4000 -t 5000 -o $(basename $BAM _filtered.bam).sam -s $(basename $BAM _filtered.bam)_filtered_sorted.sam >& scrub.log
+
+${SAMTOOLS} view -H $(basename $BAM _filtered.bam)_filtered_sorted.sam > tmpheader.sam
+cat tmpheader.sam Scrubbed-$(basename $BAM _filtered.bam).sam | \
+  ${SAMTOOLS} view -h | \
+  ${SAMTOOLS} sort -@ ${THREADS} -o Clean-$(basename $BAM _filtered.bam).bam \
+  rm tmpheader.sam
+
+# ... removal of PCR duplicates:
+#
+#${SAMTOOLS} rmdup Clean-${BAM}.bam - | samtools view -h > ${BAM}.sam
+#${SAMTOOLS} view -bh ${BAM}.sam > ${BAM}.bam
+
+done
+
+cd ..
+
+#Counting TSS tags and determining TSRs with TSRchitect:
+#
+cd tsr
+ mkdir BAMDIR
+ cd BAMDIR
+
+ for BAM in ../../BWAdir/Clean-*.bam; do
+     ln -s ../../BWAdir/${BAM} ./
+     done
+     ln -s ${BASEDIR}/${GENOME_DIR}/${GENOME_GFF} PdGenome.gff3
+     cd ..
+echo "... now running Rscript ${EXPERIMENT}wf*.Rscript"
+ time ./xrunSwf all
