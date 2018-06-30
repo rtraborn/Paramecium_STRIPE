@@ -1,23 +1,23 @@
 #!/bin/bash
 
-BASEDIR=/N/u/tlicknac/Carbonate/STRIPEseq_Replicates/
+BASEDIR=/scratch/rtraborn/STRIPEseq_para_sing
 GENOME_DIR=PdGENOME
 GENOME_FILE=pdec_mod.fa
 GENOME_GFF=pdec.gff3
 RNAfile=${BASEDIR}/${GENOME_DIR}/ptet-rDNA.fa
 
-EXPERIMENT=STRIPEseq_para
+EXPERIMENT=STRIPE_test
 SAMPLE=PdSTRIPE
 fastqDIR=${BASEDIR}/${EXPERIMENT}/fastq
 SCRIPTS=${BASEDIR}/${EXPERIMENT}/scripts
 
-BWA=/N/soft/rhel7/bwa/0.7.12/bwa
-PYTHON3=/N/soft/rhel7/python/3.6.1a/python3
+BWA=bwa
+PYTHON3=python3
 RSCRIPT=Rscript
-SAMTOOLS=/N/soft/rhel7/samtools/1.5/bin/samtools
-SRATOOLKIT=/N/soft/rhel7/sra-toolkit/2.8.2/bin/
-TAGDUST=/N/u/tlicknac/Carbonate/tagdust-2.33/src/tagdust
-TRIMMOMATIC=/N/soft/rhel7/trimmomatic/0.36/trimmomatic-0.36.jar
+SAMTOOLS=samtools
+SRATOOLKIT=~/genome_analysis/sratoolkit.2.8.2-1-ubuntu64/bin/
+TAGDUST=tagdust
+TRIMMOMATIC=~/genome_analysis/trimmomatic/Trimmomatic-0.36/trimmomatic-0.36.jar    
 TruSeq2PE=${BASEDIR}/${GENOME_DIR}/DpSTRIPE-PE.fa
 
 THREADS=10
