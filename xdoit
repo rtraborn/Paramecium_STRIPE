@@ -8,7 +8,7 @@ source ${DIR}/PdSTRIPE.configfile
 #No further edits necessary from here on ...
 #
 
-
+mkdir ${fastqDIR}
 cd ${fastqDIR}
 
 #Trimming the reads with trimmomatic:
@@ -34,7 +34,6 @@ ${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep2_R1} ${rep2
 ${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep3_R1} ${rep3_R2} -o ${OP3}
 
 cd ..
-
 
 #Mapping the reads with the BWA aligner:
 #

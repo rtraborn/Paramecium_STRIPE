@@ -26,7 +26,7 @@ cat (PdSTRIPE@title,"\tWorkflow 1\n")
 PdSTRIPE <- inputToTSS(PdSTRIPE)
 
 # ... constructing the tag count per TSS data matrices:
-PdSTRIPE <- processTSS(experimentName=PdSTRIPE, n.cores=1, tssSet="1", writeTable=TRUE)
+PdSTRIPE <- processTSS(experimentName=PdSTRIPE, n.cores=1, tssSet="all", writeTable=TRUE)
 
 # ... now adding annotation:
 #
