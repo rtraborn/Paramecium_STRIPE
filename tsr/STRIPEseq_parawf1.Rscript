@@ -11,7 +11,10 @@ pdownstream  <- 150
 
 # Start the fun ...: 
 #
+source("https://bioconductor.org/biocLite.R")
+biocLite("TSRchitect")
 library("TSRchitect")
+biocLite("GenomicRanges")
 library("GenomicRanges")
 
 
