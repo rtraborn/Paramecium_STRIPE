@@ -3,18 +3,18 @@
 #Setting variables:
 #
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-source ${DIR}/PdSTRIPE.configfile 
+source ${DIR}/PjSTRIPE.configfile 
 
 #No further edits necessary from here on ...
 #
 
-mkdir ${fastqDIR}
+#mkdir ${fastqDIR}
 cd ${fastqDIR}
 
 #Trimming the reads with trimmomatic:
 #
-echo "time ${SCRIPTS}/run_trimmomatic.sh"
-time ${SCRIPTS}/run_trimmomatic.sh
+#echo "time ${SCRIPTS}/run_trimmomatic.sh"
+#time ${SCRIPTS}/run_trimmomatic.sh
 
 #Removing ribosomal RNA hits with tagdust:
 #
@@ -29,9 +29,9 @@ rep3_R2=${SAMPLE}_rep3_trimmed_R2.fq
 OP1=${SAMPLE}_rep1_trno_tagdusted
 OP2=${SAMPLE}_rep2_trno_tagdusted
 OP3=${SAMPLE}_rep3_trno_tagdusted
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep1_R1} ${rep1_R2} -o ${OP1}
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep2_R1} ${rep2_R2} -o ${OP2}
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep3_R1} ${rep3_R2} -o ${OP3}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep1_R1} ${rep1_R2} -o ${OP1}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep2_R1} ${rep2_R2} -o ${OP2}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep3_R1} ${rep3_R2} -o ${OP3}
 
 cd ..
 
@@ -48,8 +48,8 @@ cd ${BWAdir}
 
 for BAM in *rep?_filtered.bam; do
 
-    echo "${SAMTOOLS} sort -n ${BAM} | samtools view -h > $(basename $BAM _filtered.bam)_filtered_sorted.sam"
-    ${SAMTOOLS} sort -n ${BAM} | samtools view -h > $(basename $BAM _filtered.bam)_filtered_sorted.sam                        
+    echo "${SAMTOOLS} sort -n ${BAM} | ${SAMTOOLS} view -h > $(basename $BAM _filtered.bam)_filtered_sorted.sam"
+    ${SAMTOOLS} sort -n ${BAM} | ${SAMTOOLS} view -h > $(basename $BAM _filtered.bam)_filtered_sorted.sam                        
 
 # ... scrubbing: we remove singlets left over by the samtools -f 2 -q 10 filter that
 #      left one read of a read pair intact; we also remove read pairs in
@@ -61,31 +61,19 @@ for BAM in *rep?_filtered.bam; do
 
 ${SCRIPTS}/scrubSAMfile.pl -p -i 50 -I 4000 -t 5000 -o $(basename $BAM _filtered.bam).sam -s $(basename $BAM _filtered.bam)_filtered_sorted.sam >& scrub.log              
 
+done
+
 #Newly added
 #----------------------------------------------------------------------------------------------------------------------------------------
-samtools view -H PdSTRIPE_rep1_filtered_sorted.sam > tmpheader.sam
-cat tmpheader.sam Scrubbed-PdSTRIPE_rep1.sam | samtools view -h | samtools sort -@ 8 -o Clean-PdSTRIPE_rep1.bam
+${SAMTOOLS} view -H PjSTRIPE_rep1_filtered_sorted.sam > tmpheader.sam
+cat tmpheader.sam Scrubbed-PdSTRIPE_rep1.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PjSTRIPE_rep1.bam
 
-samtools view -H PdSTRIPE_rep2_filtered_sorted.sam > tmpheader.sam
-cat tmpheader.sam Scrubbed-PdSTRIPE_rep2.sam | samtools view -h | samtools sort -@ 8 -o Clean-PdSTRIPE_rep2.bam
+${SAMTOOLS} view -H PjSTRIPE_rep2_filtered_sorted.sam > tmpheader.sam
+cat tmpheader.sam Scrubbed-PdSTRIPE_rep2.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PjSTRIPE_rep2.bam
 
-samtools view -H PdSTRIPE_rep3_filtered_sorted.sam > tmpheader.sam
-cat tmpheader.sam Scrubbed-PdSTRIPE_rep3.sam | samtools view -h | samtools sort -@ 8 -o Clean-PdSTRIPE_rep3.bam
+${SAMTOOLS} view -H PjSTRIPE_rep3_filtered_sorted.sam > tmpheader.sam
+cat tmpheader.sam Scrubbed-PjSTRIPE_rep3.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PjSTRIPE_rep3.bam
 #----------------------------------------------------------------------------------------------------------------------------------------
-
-#Old version. 									### had issues loading PdSTRIPE.sam
-#${SAMTOOLS} view -H $(basename $BAM _filtered.bam).sam > tmpheader.sam           
-#cat tmpheader.sam Scrubbed-$(basename $BAM _filtered.bam).sam | \                                      	
-#  ${SAMTOOLS} view -h | \
-#  ${SAMTOOLS} sort -@ ${THREADS} -o Clean-$(basename $BAM _filtered.bam).bam \
-#  rm tmpheader.sam
-
-# ... removal of PCR duplicates:
-#
-#${SAMTOOLS} rmdup Clean-${BAM}.bam - | samtools view -h > ${BAM}.sam
-#${SAMTOOLS} view -bh ${BAM}.sam > ${BAM}.bam
-
-done
 
 cd ..
 
@@ -98,7 +86,7 @@ cd tsr
  for BAM in ../../BWAdir/Clean-*; do                                       #changed to just Clean-* instead of Clean*-bam ... should only be 3 Clean files anyway
      ln -s ${BAM} ./                                                       # was previosly ln -s ../../${BAM} ./  ### This created broken links
   done
-     ln -s ${BASEDIR}/${GENOME_DIR}/${GENOME_GFF} PdGenome.gff3
+     ln -s ${BASEDIR}/${GENOME_DIR}/${GENOME_GFF} PjGenome.gff3
      cd ..
 echo "... now running Rscript ${EXPERIMENT}wf*.Rscript"
  time ./xrunSwf all
