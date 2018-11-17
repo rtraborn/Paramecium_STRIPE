@@ -30,20 +30,14 @@ done
 for fq in ${fastqDIR}/*_trno_tagdusted_READ1.fq; 
 do
 
-#       read1=$fq
-#	read2=$(basename $fq _READ1.fq)_READ2.fq
-#       sai1=$(basename $fq _READ1.fq)_READ1.sai
-#	sai2=$(basename $fq _READ1.fq)_READ2.sai
-#	SORTED_BAM=$(basename $fq _trno_tagdusted_READ1.fq)_sorted.bam
-
 echo "bwa sampe ${GENOME_DIR}/${GENOME_FILE} $(basename $fq _READ1.fq)_READ1.sai $(basename $fq _READ1.fq)_READ2.sai \
 	${fastqDIR}/$read1 ${fastqDIR}/$read2 | \
-	samtools view -uS - | \
-	samtools sort -O BAM - > $(basename $fq _trno_tagdusted_READ1.fq)_sorted.bam"
+	${SAMTOOLS} view -uS - | \
+	${SAMTOOLS} sort -O BAM - > $(basename $fq _trno_tagdusted_READ1.fq)_sorted.bam"
 
 ${BWA} sampe ${GENOME_DIR}/${GENOME_FILE} $(basename $fq _READ1.fq)_READ1.sai $(basename $fq _READ1.fq)_READ2.sai $fq $fastqDIR/$(basename $fq _READ1.fq)_READ2.fq | \
-	samtools view -uS - | \
-	samtools sort -O BAM - > $(basename $fq _trno_tagdusted_READ1.fq)_sorted.bam
+	${SAMTOOLS} view -uS - | \
+	${SAMTOOLS} sort -O BAM - > $(basename $fq _trno_tagdusted_READ1.fq)_sorted.bam
 
 echo "samtools index -b $(basename $fq _trno_tagdusted_READ1.fq)_sorted.bam "
 ${SAMTOOLS} index -b $(basename $fq _trno_tagdusted_READ1.fq)_sorted.bam
