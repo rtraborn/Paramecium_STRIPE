@@ -16,7 +16,7 @@ cd ${BWAdir}
 
 echo "Indexing the Paramecium genome using bwa ..."
 echo "bwa index ${GENOME_DIR}/${GENOME_FILE}"
-${BWA}    index ${GENOME_DIR}/${GENOME_FILE}
+${BWA} index ${GENOME_DIR}/${GENOME_FILE}
 
 echo "Starting alignments ..."
 #for fq in ${fastqDIR}/*_trno_tagdusted_READ?.fq;
