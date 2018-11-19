@@ -66,10 +66,10 @@ done
 #Newly added
 #----------------------------------------------------------------------------------------------------------------------------------------
 ${SAMTOOLS} view -H PjSTRIPE_rep1_filtered_sorted.sam > tmpheader.sam
-cat tmpheader.sam Scrubbed-PdSTRIPE_rep1.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PjSTRIPE_rep1.bam
+cat tmpheader.sam Scrubbed-PjSTRIPE_rep1.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PjSTRIPE_rep1.bam
 
 ${SAMTOOLS} view -H PjSTRIPE_rep2_filtered_sorted.sam > tmpheader.sam
-cat tmpheader.sam Scrubbed-PdSTRIPE_rep2.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PjSTRIPE_rep2.bam
+cat tmpheader.sam Scrubbed-PjSTRIPE_rep2.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PjSTRIPE_rep2.bam
 
 ${SAMTOOLS} view -H PjSTRIPE_rep3_filtered_sorted.sam > tmpheader.sam
 cat tmpheader.sam Scrubbed-PjSTRIPE_rep3.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PjSTRIPE_rep3.bam
