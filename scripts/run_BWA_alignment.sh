@@ -18,14 +18,14 @@ echo "Indexing the Paramecium genome using bwa ..."
 echo "bwa index ${GENOME_DIR}/${GENOME_FILE}"
 ${BWA}    index ${GENOME_DIR}/${GENOME_FILE}
 
-#echo "Starting alignments ..."
-#for fq in ${fastqDIR}/*_trno_tagdusted_READ?.fq;
-#do
+echo "Starting alignments ..."
+for fq in ${fastqDIR}/*_trno_tagdusted_READ?.fq;
+do
 
-# 	echo "bwa aln -t ${THREADS} -n 3 ${GENOME_DIR}/${GENOME_FILE} -f $(basename ${fq} .fq).sai ${fq}"
-#  	${BWA}    aln -t ${THREADS} -n 3 ${GENOME_DIR}/${GENOME_FILE} -f $(basename ${fq} .fq).sai ${fq}
+ 	echo "bwa aln -t ${THREADS} -n 3 ${GENOME_DIR}/${GENOME_FILE} -f $(basename ${fq} .fq).sai ${fq}"
+  	${BWA}    aln -t ${THREADS} -n 3 ${GENOME_DIR}/${GENOME_FILE} -f $(basename ${fq} .fq).sai ${fq}
 
-#done
+done
 
 for fq in ${fastqDIR}/*_trno_tagdusted_READ1.fq; 
 do
