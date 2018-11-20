@@ -11,10 +11,9 @@ SAMPLE=PdSTRIPE
 fastqDIR=${BASEDIR}/${EXPERIMENT}/fastq
 SCRIPTS=${BASEDIR}/${EXPERIMENT}/scripts
 
-RSCRIPT=/N/u/rtraborn/Carbonate/genome_analysis/R-3.5.1/bin/Rscript
 BWA=/N/soft/rhel7/bwa/0.7.12/bwa
 PYTHON3=/N/soft/rhel7/python/3.6.1a/bin/python3
-RSCRIPT=/N/soft/rhel7/r/3.3.1/bin/Rscript
+RSCRIPT=/N/u/rtraborn/Carbonate/genome_analysis/R-3.5.1/bin/Rscript
 SAMTOOLS=/N/soft/rhel7/samtools/1.5/bin/samtools
 SRATOOLKIT=/N/soft/rhel7/sra-toolkit/2.8.2/bin/
 TAGDUST=/N/u/rtraborn/Carbonate/genome_analysis/tagdust-2.33/src/tagdust
