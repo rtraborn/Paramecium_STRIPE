@@ -2,12 +2,12 @@
 
 BASEDIR=/N/dc2/projects/ParameciumPromoters/stripeSeq
 GENOME_DIR=PdGENOME/
-GENOME_FILE=pprim_mod.fa
-GENOME_GFF=pprim.gff3
+GENOME_FILE=pdec_mod.fa
+GENOME_GFF=pdec.gff3
 RNAfile=${BASEDIR}/${GENOME_DIR}/ptet-rDNA.fa
 
-EXPERIMENT=PprimSTRIPE/
-SAMPLE=PprimSTRIPE
+EXPERIMENT=PdSTRIPE/
+SAMPLE=PdSTRIPE
 fastqDIR=${BASEDIR}/${EXPERIMENT}/fastq
 SCRIPTS=${BASEDIR}/${EXPERIMENT}/scripts
 
