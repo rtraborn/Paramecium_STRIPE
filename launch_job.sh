@@ -8,7 +8,7 @@
 
 echo "Launching job"
 
-cd /N/u/rtraborn/Carbonate/ParameciumPromoters/stripeSeq/PtredSTRIPE
+cd /N/u/rtraborn/Carbonate/ParameciumPromoters/stripe_seq/PtredSTRIPE
 ./xdoit > err
 
 echo "Job complete"
