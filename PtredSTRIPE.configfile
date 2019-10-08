@@ -1,9 +1,9 @@
 #!/bin/bash
 
-BASEDIR=/N/dc2/projects/ParameciumPromoters/stripeSeq
+BASEDIR=/N/dc2/projects/ParameciumPromoters/stripe_seq
 GENOME_DIR=PtredGENOME/
-GENOME_FILE=ptred_mod.fa
-GENOME_GFF=ptred.gff3
+GENOME_FILE=ptre_mod.fa
+GENOME_GFF=ptre.gff3
 RNAfile=${BASEDIR}/${GENOME_DIR}/ptet-rDNA.fa
 
 EXPERIMENT=PtredSTRIPE/
