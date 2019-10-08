@@ -1,8 +1,8 @@
-ln -s /N/dc2/scratch/tlicknac/STRIPEseq_Raw_Reads/GSF1844-4-DEC_S4_R1_001.fastq PdSTRIPE_rep1_1.fq
-ln -s /N/dc2/scratch/tlicknac/STRIPEseq_Raw_Reads/GSF1844-4-DEC_S4_R2_001.fastq PdSTRIPE_rep1_2.fq
+ln -s /N/u/rtraborn/Carbonate/Daphnia_Gene_Expression/STRIPEseq/GSF2355_092719/GSF2355-Tredec-1_S2_R1_001.fastq  Tredec-1_R1.fastq
+ln -s /N/u/rtraborn/Carbonate/Daphnia_Gene_Expression/STRIPEseq/GSF2355_092719/GSF2355-Tredec-1_S2_R2_001.fastq  Tredec-1_R2.fastq
 
-ln -s /N/dc2/scratch/tlicknac/STRIPEseq_Raw_Reads/GSF1844-5-DEC_S5_R1_001.fastq PdSTRIPE_rep2_1.fq
-ln -s /N/dc2/scratch/tlicknac/STRIPEseq_Raw_Reads/GSF1844-5-DEC_S5_R2_001.fastq PdSTRIPE_rep2_2.fq
+ln -s /N/u/rtraborn/Carbonate/Daphnia_Gene_Expression/STRIPEseq/GSF2355_092719/GSF2355-Tredec-2_S2_R1_001.fastq  Tredec-2_R1.fastq
+ln -s /N/u/rtraborn/Carbonate/Daphnia_Gene_Expression/STRIPEseq/GSF2355_092719/GSF2355-Tredec-2_S2_R2_001.fastq  Tredec-2_R2.fastq
 
-ln -s /N/dc2/scratch/tlicknac/STRIPEseq_Raw_Reads/GSF1844-6-DEC_S6_R1_001.fastq PdSTRIPE_rep3_1.fq
-ln -s /N/dc2/scratch/tlicknac/STRIPEseq_Raw_Reads/GSF1844-6-DEC_S6_R2_001.fastq PdSTRIPE_rep3_2.fq
+ln -s /N/u/rtraborn/Carbonate/Daphnia_Gene_Expression/STRIPEseq/GSF2355_092719/GSF2355-Tredec-3_S2_R1_001.fastq  Tredec-3_R1.fastq
+ln -s /N/u/rtraborn/Carbonate/Daphnia_Gene_Expression/STRIPEseq/GSF2355_092719/GSF2355-Tredec-3_S2_R2_001.fastq  Tredec-3_R2.fastq
