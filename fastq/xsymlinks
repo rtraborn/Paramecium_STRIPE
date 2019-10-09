@@ -1,0 +1,7 @@
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Pent-rep1_S13_R1_001.fastq  PpentSTRIPE_rep1_trimmed_R1.fq
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Pent-rep1_S13_R2_001.fastq  PpentSTRIPE_rep1_trimmed_R2.fq
+
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Pent-rep2_S14_R1_001.fastq  PpentSTRIPE_rep2_trimmed_R1.fq
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Pent-rep2_S14_R2_001.fastq  PpentSTRIPE_rep2_trimmed_R2.fq
+
+

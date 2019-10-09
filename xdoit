@@ -3,7 +3,7 @@
 #Setting variables:
 #
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-source ${DIR}/PnSTRIPE.configfile 
+source ${DIR}/PpentSTRIPE.configfile 
 
 #No further edits necessary from here on ...
 #
