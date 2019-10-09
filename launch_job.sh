@@ -9,7 +9,7 @@ module load java
 
 echo "Launching job"
 
-cd /N/u/rtraborn/Carbonate/ParameciumPromoters/stripeSeq/PqSTRIPE
+cd /N/u/rtraborn/Carbonate/ParameciumPromoters/stripe_seq/PqSTRIPE
 ./xdoit > err
 
 echo "Job complete"
