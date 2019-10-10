@@ -1,11 +1,11 @@
-ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Caud-rep1_S7_R1_001.fastq PcSTRIPE_rep1_1.fq
-ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Caud-rep1_S7_R2_001.fastq PcSTRIPE_rep1_2.fq
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Caud-rep1_S7_R1_001.fastq PcSTRIPE_rep1_trimmed_R1.fq
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Caud-rep1_S7_R2_001.fastq PcSTRIPE_rep1_trimmed_R2.fq
 
-ln -s /N/u/rtraborn/Carbonate/Daphnia_Gene_Expression/STRIPEseq/GSF2355_092719/GSF2355-Caud-rep2_S13_R1_001.fastq PcSTRIPE_rep2_1.fq
-ln -s /N/u/rtraborn/Carbonate/Daphnia_Gene_Expression/STRIPEseq/GSF2355_092719/GSF2355-Caud-rep2_S13_R2_001.fastq PcSTRIPE_rep2_2.fq
+ln -s /N/u/rtraborn/Carbonate/Daphnia_Gene_Expression/STRIPEseq/GSF2355_092719/GSF2355-Caud-rep2_S13_R1_001.fastq PcSTRIPE_rep2_trimmed_R1.fq
+ln -s /N/u/rtraborn/Carbonate/Daphnia_Gene_Expression/STRIPEseq/GSF2355_092719/GSF2355-Caud-rep2_S13_R2_001.fastq PcSTRIPE_rep2_trimmed_R2.fq
 
-ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Caud-rep3_S9_R1_001.fastq PcSTRIPE_rep3_1.fq
-ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Caud-rep3_S9_R2_001.fastq PcSTRIPE_rep3_2.fq
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Caud-rep3_S9_R1_001.fastq PcSTRIPE_rep3_trimmed_R1.fq
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Caud-rep3_S9_R2_001.fastq PcSTRIPE_rep3_trimmed_R2.fq
 
 
 
