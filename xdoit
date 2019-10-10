@@ -31,9 +31,9 @@ rep3_R2=${SAMPLE}_rep3_trimmed_R2.fq
 OP1=${SAMPLE}_rep1_trno_tagdusted
 OP2=${SAMPLE}_rep2_trno_tagdusted
 OP3=${SAMPLE}_rep3_trno_tagdusted
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep1_R1} ${rep1_R2} -o ${OP1}
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep2_R1} ${rep2_R2} -o ${OP2}
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep3_R1} ${rep3_R2} -o ${OP3}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep1_R1} ${rep1_R2} -o ${OP1}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep2_R1} ${rep2_R2} -o ${OP2}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep3_R1} ${rep3_R2} -o ${OP3}
 
 cd ..
 
@@ -51,7 +51,7 @@ cd ${BWAdir}
 for BAM in *rep?_filtered.bam; do
 
     echo "${SAMTOOLS} sort -n ${BAM} | samtools view -h > $(basename $BAM _filtered.bam)_filtered_sorted.sam"
-    ${SAMTOOLS} sort -n ${BAM} | samtools view -h > $(basename $BAM _filtered.bam)_filtered_sorted.sam                        
+    ${SAMTOOLS} sort -n ${BAM} | ${SAMTOOLS} view -h > $(basename $BAM _filtered.bam)_filtered_sorted.sam                        
 
 # ... scrubbing: we remove singlets left over by the samtools -f 2 -q 10 filter that
 #      left one read of a read pair intact; we also remove read pairs in
