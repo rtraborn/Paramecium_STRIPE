@@ -16,7 +16,7 @@ cd ${fastqDIR}
 #Trimming the reads with trimmomatic:
 #
 echo "time ${SCRIPTS}/run_trimmomatic.sh"
-time ${SCRIPTS}/run_trimmomatic.sh
+#time ${SCRIPTS}/run_trimmomatic.sh
 
 #Removing ribosomal RNA hits with tagdust:
 #
