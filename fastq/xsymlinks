@@ -1,0 +1,9 @@
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Dodec-rep1_S22_R1_001.fastq PdodecSTRIPE_rep1_trimmed_R1.fq
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Dodec-rep1_S22_R2_001.fastq PdodecSTRIPE_rep1_trimmed_R2.fq
+
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2355_092719/GSF2355-Dodec-3_S1_R1_001.fastq PdodecSTRIPE_rep2_trimmed_R1.fq
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2355_092719/GSF2355-Dodec-3_S1_R2_001.fastq PdodecSTRIPE_rep2_trimmed_R2.fq
+
+
+
+
