@@ -1,6 +1,6 @@
 #!/bin/bash
 
-wBASEDIR=/N/dc2/projects/ParameciumPromoters/stripe_seq
+BASEDIR=/N/dc2/projects/ParameciumPromoters/stripe_seq
 GENOME_DIR=PcGENOME/
 GENOME_FILE=pcaud_mod.fa
 GENOME_GFF=pcaud.gff3
