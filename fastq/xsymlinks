@@ -1,8 +1,3 @@
-ln -s /N/dc2/scratch/tlicknac/STRIPEseq_Raw_Reads/GSF1844-4-DEC_S4_R1_001.fastq PdSTRIPE_rep1_1.fq
-ln -s /N/dc2/scratch/tlicknac/STRIPEseq_Raw_Reads/GSF1844-4-DEC_S4_R2_001.fastq PdSTRIPE_rep1_2.fq
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2355_092719/GSF2355-Prim-rep2_S15_R1_001.fastq PprimSTRIPE_rep1_trimmed_R1.fq 
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2355_092719/GSF2355-Prim-rep2_S15_R2_001.fastq PprimSTRIPE_rep1_trimmed_R2.fq 
 
-ln -s /N/dc2/scratch/tlicknac/STRIPEseq_Raw_Reads/GSF1844-5-DEC_S5_R1_001.fastq PdSTRIPE_rep2_1.fq
-ln -s /N/dc2/scratch/tlicknac/STRIPEseq_Raw_Reads/GSF1844-5-DEC_S5_R2_001.fastq PdSTRIPE_rep2_2.fq
-
-ln -s /N/dc2/scratch/tlicknac/STRIPEseq_Raw_Reads/GSF1844-6-DEC_S6_R1_001.fastq PdSTRIPE_rep3_1.fq
-ln -s /N/dc2/scratch/tlicknac/STRIPEseq_Raw_Reads/GSF1844-6-DEC_S6_R2_001.fastq PdSTRIPE_rep3_2.fq
