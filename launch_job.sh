@@ -3,7 +3,7 @@
 #PBS -N PtredSTRIPE_job
 #PBS -k o
 #PBS -l nodes=1:ppn=16,vmem=48gb
-#PBS -l walltime=6:00:00
+#PBS -l walltime=8:00:00
 
 echo "Launching job"
 
