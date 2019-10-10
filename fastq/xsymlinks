@@ -1,6 +1,6 @@
-ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Sept-rep1_S10_R1_001.fastq PseptSTRIPE_rep1_1.fq
-ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Sept-rep1_S10_R2_001.fastq PseptSTRIPE_rep1_2.fq
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Sept-rep1_S10_R1_001.fastq PseptSTRIPE_rep1_trimmed_R1.fq
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Sept-rep1_S10_R2_001.fastq PseptSTRIPE_rep1_trimmed_R2.fq
 
-ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Sept-rep3_S12_R1_001.fastq PseptSTRIPE_rep3_1.fq
-ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Sept-rep3_S12_R2_001.fastq PseptSTRIPE_rep3_2.fq
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Sept-rep3_S12_R1_001.fastq PseptSTRIPE_rep2_trimmed_R1.fq
+ln -s /N/u/rtraborn/Carbonate/ParameciumPromoters/STRIPE_data/GSF2320_071719/GSF2320-Sept-rep3_S12_R2_001.fastq PseptSTRIPE_rep2_trimmed_R2.fq
 
