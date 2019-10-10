@@ -1,13 +1,13 @@
 #!/bin/bash
 
-BASEDIR=/N/dc2/projects/ParameciumPromoters/stripeSeq
-GENOME_DIR=PdGENOME/
-GENOME_FILE=pdec_mod.fa
-GENOME_GFF=pdec.gff3
+BASEDIR=/N/dc2/projects/ParameciumPromoters/stripe_seq
+GENOME_DIR=PseptGENOME/
+GENOME_FILE=psept_mod.fa
+GENOME_GFF=psept.gff3
 RNAfile=${BASEDIR}/${GENOME_DIR}/ptet-rDNA.fa
 
-EXPERIMENT=PdSTRIPE/
-SAMPLE=PdSTRIPE
+EXPERIMENT=PseptSTRIPE/
+SAMPLE=PseptSTRIPE
 fastqDIR=${BASEDIR}/${EXPERIMENT}/fastq
 SCRIPTS=${BASEDIR}/${EXPERIMENT}/scripts
 
