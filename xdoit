@@ -15,8 +15,8 @@ cd ${fastqDIR}
 
 #Trimming the reads with trimmomatic:
 #
-echo "time ${SCRIPTS}/run_trimmomatic.sh"
-time ${SCRIPTS}/run_trimmomatic.sh
+#echo "time ${SCRIPTS}/run_trimmomatic.sh"
+#time ${SCRIPTS}/run_trimmomatic.sh
 
 #Removing ribosomal RNA hits with tagdust:
 #
@@ -51,7 +51,7 @@ cd ${BWAdir}
 for BAM in *rep?_filtered.bam; do
 
     echo "${SAMTOOLS} sort -n ${BAM} | samtools view -h > $(basename $BAM _filtered.bam)_filtered_sorted.sam"
-    ${SAMTOOLS} sort -n ${BAM} | ${SAMTOOLS} view -h > $(basename $BAM _filtered.bam)_filtered_sorted.sam                        
+    ${SAMTOOLS} sort -n ${BAM} | samtools view -h > $(basename $BAM _filtered.bam)_filtered_sorted.sam                        
 
 # ... scrubbing: we remove singlets left over by the samtools -f 2 -q 10 filter that
 #      left one read of a read pair intact; we also remove read pairs in
@@ -68,7 +68,7 @@ done
 #Newly added
 #----------------------------------------------------------------------------------------------------------------------------------------
 ${SAMTOOLS} view -H PdSTRIPE_rep1_filtered_sorted.sam > tmpheader.sam
-cat tmpheader.sam Scrubbed-PdSTRIPE_rep1.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PdSTRIPE_rep1.bam
+cat tmpheader.sam Scrubbed-PdSTRIPE_rep1.sam | samtools view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PdSTRIPE_rep1.bam
 
 ${SAMTOOLS} view -H PdSTRIPE_rep2_filtered_sorted.sam > tmpheader.sam
 cat tmpheader.sam Scrubbed-PdSTRIPE_rep2.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PdSTRIPE_rep2.bam
