@@ -3,7 +3,7 @@
 BASEDIR=/N/dc2/projects/ParameciumPromoters/stripe_seq
 GENOME_DIR=PseptGENOME/
 GENOME_FILE=psept_mod.fa
-GENOME_GFF=psept.gff3
+GENOME_GFF=psept-full.gff3
 RNAfile=${BASEDIR}/${GENOME_DIR}/ptet-rDNA.fa
 
 EXPERIMENT=PseptSTRIPE/

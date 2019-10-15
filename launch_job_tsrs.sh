@@ -8,7 +8,6 @@
 echo "Launching job"
 
 cd /N/u/rtraborn/Carbonate/ParameciumPromoters/stripe_seq/PseptSTRIPE
-./xdoit_tsr
-./xrunSwf > err
+./xdoit_tsr > err
 
 echo "Job complete"
