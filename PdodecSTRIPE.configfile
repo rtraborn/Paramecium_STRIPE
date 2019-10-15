@@ -3,7 +3,7 @@
 BASEDIR=/N/dc2/projects/ParameciumPromoters/stripe_seq
 GENOME_DIR=PdodecGENOME/
 GENOME_FILE=pdodec_mod.fa
-GENOME_GFF=pdodec.gff3
+GENOME_GFF=pdodec-full.gff3
 RNAfile=${BASEDIR}/${GENOME_DIR}/ptet-rDNA.fa
 
 EXPERIMENT=PdodecSTRIPE
