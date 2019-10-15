@@ -3,7 +3,7 @@
 BASEDIR=/N/dc2/projects/ParameciumPromoters/stripe_seq
 GENOME_DIR=PsonGENOME/
 GENOME_FILE=pson_mod.fa
-GENOME_GFF=pson.gff3
+GENOME_GFF=pson-full.gff3
 RNAfile=${BASEDIR}/${GENOME_DIR}/ptet-rDNA.fa
 
 EXPERIMENT=PsonSTRIPE/
