@@ -3,7 +3,9 @@
 #Setting variables:
 #
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-source ${DIR}/PqSTRIPE.configfile 
+source ${DIR}/PsonSTRIPE.configfile 
+
+module load java
 
 #No further edits necessary from here on ...
 #
@@ -48,7 +50,7 @@ cd ${BWAdir}
 
 for BAM in *rep?_filtered.bam; do
 
-    echo "${SAMTOOLS} sort -n ${BAM} | ${SAMTOOLS} view -h > $(basename $BAM _filtered.bam)_filtered_sorted.sam"
+    echo "${SAMTOOLS} sort -n ${BAM} | samtools view -h > $(basename $BAM _filtered.bam)_filtered_sorted.sam"
     ${SAMTOOLS} sort -n ${BAM} | ${SAMTOOLS} view -h > $(basename $BAM _filtered.bam)_filtered_sorted.sam                        
 
 # ... scrubbing: we remove singlets left over by the samtools -f 2 -q 10 filter that
@@ -65,14 +67,14 @@ done
 
 #Newly added
 #----------------------------------------------------------------------------------------------------------------------------------------
-${SAMTOOLS} view -H PnSTRIPE_rep1_filtered_sorted.sam > tmpheader.sam
-cat tmpheader.sam Scrubbed-PnSTRIPE_rep1.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PnSTRIPE_rep1.bam
+${SAMTOOLS} view -H PdSTRIPE_rep1_filtered_sorted.sam > tmpheader.sam
+cat tmpheader.sam Scrubbed-PdSTRIPE_rep1.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PdSTRIPE_rep1.bam
 
-${SAMTOOLS} view -H PnSTRIPE_rep2_filtered_sorted.sam > tmpheader.sam
-cat tmpheader.sam Scrubbed-PnSTRIPE_rep2.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PnSTRIPE_rep2.bam
+${SAMTOOLS} view -H PdSTRIPE_rep2_filtered_sorted.sam > tmpheader.sam
+cat tmpheader.sam Scrubbed-PdSTRIPE_rep2.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PdSTRIPE_rep2.bam
 
-${SAMTOOLS} view -H PnSTRIPE_rep3_filtered_sorted.sam > tmpheader.sam
-cat tmpheader.sam Scrubbed-PnSTRIPE_rep3.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PnSTRIPE_rep3.bam
+${SAMTOOLS} view -H PdSTRIPE_rep3_filtered_sorted.sam > tmpheader.sam
+cat tmpheader.sam Scrubbed-PdSTRIPE_rep3.sam | ${SAMTOOLS} view -h | ${SAMTOOLS} sort -@ 8 -o Clean-PdSTRIPE_rep3.bam
 #----------------------------------------------------------------------------------------------------------------------------------------
 
 cd ..
@@ -86,7 +88,7 @@ cd tsr
  for BAM in ../../BWAdir/Clean-*; do                                       #changed to just Clean-* instead of Clean*-bam ... should only be 3 Clean files anyway
      ln -s ${BAM} ./                                                       # was previosly ln -s ../../${BAM} ./  ### This created broken links
   done
-     ln -s ${BASEDIR}/${GENOME_DIR}/${GENOME_GFF} PnGenome.gff3
+     ln -s ${BASEDIR}/${GENOME_DIR}/${GENOME_GFF} PdGenome.gff3
      cd ..
 echo "... now running Rscript ${EXPERIMENT}wf*.Rscript"
  time ./xrunSwf all
