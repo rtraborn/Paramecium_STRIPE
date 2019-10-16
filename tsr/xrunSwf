@@ -17,5 +17,5 @@ if [ "$wf" == "all" ] ; then
 	${RSCRIPT} --default-packages=methods,datasets,utils,grDevices,graphics,stats  STRIPEseq_parawf3.Rscript > STRIPEseq_parawf3.output
 	${RSCRIPT} --default-packages=methods,datasets,utils,grDevices,graphics,stats  STRIPEseq_parawf4.Rscript > STRIPEseq_parawf4.output
 else
-        ${RSCRIPT} --default-packages=methods,datasets,utils,grDevices,graphics,stats  ${EXPERIMENT}wf${wf}.Rscript > ${EXPERIMENT}wf${wf}.output
+        ${RSCRIPT} --default-packages=methods,datasets,utils,grDevices,graphics,stats  STRIPEseq_parawf${wf}.Rscript > STRIPEseq_parawf${wf}.output
 fi

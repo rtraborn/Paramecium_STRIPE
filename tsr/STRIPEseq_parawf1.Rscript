@@ -22,7 +22,7 @@ BAMDIR  <- c("./BAMDIR")
 PdGFF3  <- c("./BAMDIR/PdGenome.gff3")
 
 # ... initializing the tssObj object:
-PdSTRIPE <- loadTSSobj("P. son STRIPE Experiment (Paramecium)", BAMDIR, isPairedBAM=TRUE, isPairedBED=FALSE, sampleNames=c("Pson_rep1", Pson_rep2", replicateIDs=c(1,1))
+PdSTRIPE <- loadTSSobj("P. son STRIPE Experiment (Paramecium)", BAMDIR, isPairedBAM=TRUE, isPairedBED=FALSE, sampleNames=c("Pson_rep1", "Pson_rep2"), replicateIDs=c(1,1))
 cat (PdSTRIPE@title,"\tWorkflow 1\n")
 
 # ... converting BAM data into TSS information and attaching it to the tssObj object:
