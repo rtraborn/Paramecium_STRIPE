@@ -31,8 +31,8 @@ rep2_R2=${SAMPLE}_rep2_trimmed_R2.fq
 OP1=${SAMPLE}_rep1_trno_tagdusted
 OP2=${SAMPLE}_rep2_trno_tagdusted
 #OP3=${SAMPLE}_rep3_trno_tagdusted
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep1_R1} ${rep1_R2} -o ${OP1}
-${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep2_R1} ${rep2_R2} -o ${OP2}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep1_R1} ${rep1_R2} -o ${OP1}
+#${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep2_R1} ${rep2_R2} -o ${OP2}
 #${TAGDUST} -ref ${RNAfile} -dust 97 -t ${THREADS} -fe 3 -1 R:N ${rep3_R1} ${rep3_R2} -o ${OP3}
 
 cd ..
@@ -85,7 +85,7 @@ cd tsr
  mkdir BAMDIR
  cd BAMDIR
 
- for BAM in ../../BWAdir/*_rep?_filtered.bam; do                                       #changed to just Clean-* instead of Clean*-bam ... should only be 3 Clean files anyway
+ for BAM in ../../BWAdir/*_rep?_sorted.bam; do                                       #changed to just Clean-* instead of Clean*-bam ... should only be 3 Clean files anyway
      ln -s ${BAM} ./                                                       # was previosly ln -s ../../${BAM} ./  ### This created broken links
   done
      ln -s ${BASEDIR}/${GENOME_DIR}/${GENOME_GFF} PdGenome.gff3
