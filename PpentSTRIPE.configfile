@@ -1,13 +1,13 @@
 #!/bin/bash
 
 BASEDIR=/N/dc2/projects/ParameciumPromoters/stripe_seq
-GENOME_DIR=PprentGENOME/
+GENOME_DIR=PpentGENOME/
 GENOME_FILE=ppent_mod.fa
 GENOME_GFF=ppent-full.gff
 RNAfile=${BASEDIR}/${GENOME_DIR}/ptet-rDNA.fa
 
-EXPERIMENT=PtredSTRIPE/
-SAMPLE=PtredSTRIPE
+EXPERIMENT=PpentSTRIPE/
+SAMPLE=PpentSTRIPE
 fastqDIR=${BASEDIR}/${EXPERIMENT}/fastq
 SCRIPTS=${BASEDIR}/${EXPERIMENT}/scripts
 
