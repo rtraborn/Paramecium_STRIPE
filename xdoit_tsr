@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#Setting variables:
+#
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+source ${DIR}/PtredSTRIPE.configfile 
+
+#Counting TSS tags and determining TSRs with TSRchitect:
+#
+cd tsr
+ mkdir BAMDIR
+ cd BAMDIR
+
+ for BAM in ../../BWAdir/*_rep?_filtered.bam ; do                                       #changed to just Clean-* instead of Clean*-bam ... should only be 3 Clean files anyway
+     ln -s ${BAM} ./                                                       # was previosly ln -s ../../${BAM} ./  ### This created broken links
+  done
+     ln -s ${BASEDIR}/${GENOME_DIR}/${GENOME_GFF} PdGenome.gff3
+     cd ..
+echo "... now running Rscript ${EXPERIMENT}wf*.Rscript"
+ time ./xrunSwf all
