@@ -19,7 +19,7 @@ library("GenomicRanges")
 
 
 BAMDIR  <- c("./BAMDIR")
-PdGFF3  <- c("./BAMDIR/Pson-full.gff3")
+PdGFF3  <- c("./BAMDIR/PdGenome.gff3")
 
 # ... initializing the tssObj object:
 PdSTRIPE <- loadTSSobj("P. quad STRIPE Experiment (Paramecium)", BAMDIR, isPairedBAM=TRUE, isPairedBED=FALSE, sampleNames=c("Pquad_Rep1", "Pquad_Rep2", "Pquad_Rep3"), replicateIDs=c(1,1,1))
