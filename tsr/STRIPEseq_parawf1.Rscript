@@ -12,9 +12,9 @@ pdownstream  <- 150
 # Start the fun ...: 
 #
 source("https://bioconductor.org/biocLite.R")
-biocLite("TSRchitect")
+#biocLite("TSRchitect")
 library("TSRchitect")
-biocLite("GenomicRanges")
+#biocLite("GenomicRanges")
 library("GenomicRanges")
 
 
@@ -22,7 +22,7 @@ BAMDIR  <- c("./BAMDIR")
 PdGFF3  <- c("./BAMDIR/PdGenome.gff3")
 
 # ... initializing the tssObj object:
-PdSTRIPE <- loadTSSobj("P. deca STRIPE Experiment (Paramecium)", BAMDIR, isPairedBAM=TRUE, isPairedBED=FALSE, sampleNames=c("Pdec_Rep1", "Pdec_Rep2", "Pdec_Rep3"), replicateIDs=c(1,1,1))
+PdSTRIPE <- loadTSSobj("P. quad STRIPE Experiment (Paramecium)", BAMDIR, isPairedBAM=TRUE, isPairedBED=FALSE, sampleNames=c("Pcaud_Rep1", "Pcaud_Rep2", "Pcaud_Rep3"), replicateIDs=c(1,1,1))
 cat (PdSTRIPE@title,"\tWorkflow 1\n")
 
 # ... converting BAM data into TSS information and attaching it to the tssObj object:
