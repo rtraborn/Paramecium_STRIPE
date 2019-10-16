@@ -9,6 +9,5 @@ echo "Launching job"
 
 cd /N/u/rtraborn/Carbonate/ParameciumPromoters/stripe_seq/PdodecSTRIPE
 ./xdoit_tsr
-./xrunSwf > err
 
 echo "Job complete"
