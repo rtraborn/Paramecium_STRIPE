@@ -9,7 +9,6 @@
 echo "Launching job"
 
 cd /N/u/rtraborn/Carbonate/ParameciumPromoters/stripe_seq/PsonSTRIPE
-./xdoit_tsr
-./xrunSwf > err
+./xdoit_tsr > err
 
 echo "Job complete"
